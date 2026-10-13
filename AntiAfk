@@ -1,0 +1,13 @@
+local VirtualUser = game:GetService("VirtualUser")
+
+local delay = 10 * 60
+
+task.spawn(function()
+    while true do
+        task.wait(delay)
+        pcall(function()
+            VirtualUser:CaptureController()
+            VirtualUser:ClickButton2(Vector2.new(0, 0))
+        end)
+    end
+end)
